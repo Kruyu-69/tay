@@ -1,0 +1,28 @@
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("ยินดีต้อนรับสู่ Backend");
+});
+
+app.get("/about", (req, res) => {
+    res.send("ระบบ Backend สำหรับการเรียนรู้");
+});
+
+app.get("/students", (req, res) => {
+    res.json([
+        {
+            id: 1,
+            name: "สมชาย"
+        },
+        {
+            id: 2,
+            name: "สมหญิง"
+        }
+    ]);
+});
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+});
